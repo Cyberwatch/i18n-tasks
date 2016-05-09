@@ -56,7 +56,7 @@ module I18n::Tasks
 
     # whether the value for key exists in locale (defaults: base_locale)
     def key_value?(key, locale = base_locale)
-      !t(key, locale).nil?
+      !t(key, locale).nil? || !t(key.split('.').last, locale).nil?
     end
 
     def external_key?(key, locale = base_locale)
